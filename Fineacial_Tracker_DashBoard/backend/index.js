@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 //Load enviroment variables from .env file
 dotenv.config({ path: "./config/.env" });
@@ -20,6 +21,7 @@ connectDB();
 const app = express();
 
 //MIDDLEWARE
+app.use(cors());
 app.use(express.json());
 const expenseRoute = require("./routes/ExpenseRoutes");
 app.use("/api/v1/expenses", expenseRoute);
