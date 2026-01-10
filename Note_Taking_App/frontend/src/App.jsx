@@ -11,6 +11,7 @@ import { AuthContext } from "./context/AuthContext";
 const App = () => {
   const { user, loading } = useContext(AuthContext);
 
+  console.log(user);
   if (loading) {
     return <div>Loading....</div>
   }
