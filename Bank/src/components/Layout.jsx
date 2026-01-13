@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 const SidebarItem = ({ item, active }) => {
     return (
-        <Link className={`flex space-x-3.5 px-5 py-3 rounded-lg transition-all duration-300 ${active ? "bg-indigo-50 text-indigo-600" : "hover:bg-slate-50 text-slate-500 hover:text-slate-800"}`}>
+        <Link to={item.path} className={`flex space-x-3.5 px-5 py-3 rounded-lg transition-all duration-300 ${active ? "bg-indigo-50 text-indigo-600" : "hover:bg-slate-50 text-slate-500 hover:text-slate-800"}`}>
             <div className={`p-1.5 rounded-md ${active ? "bg-indigo-600 text-white shadow-md shadow-indigo-100" : "bg-transparent transition-colors group-hover:bg-slate-100"}`}>{item.icon}</div>
             <span className={`font-semibold text-sm ${active ? "text-indigo-600" : "text-slate-500"}`}>{item.name}</span>
         </Link>
